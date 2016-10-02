@@ -100,7 +100,7 @@ keepItSecretKeepItSafe();
 function makeBuddies(){
 
 
-  // create an `aside` tag, ass aside into rivendell h1
+  // create an `aside` tag, aside into rivendell h1
 
   var aside = $('<aside>');
 
@@ -163,11 +163,11 @@ function leaveTheShire(){
 
   // assemble the `hobbits` and move them to `rivendell`
 
-  $('#middle-earth').children('article')[0].children[1].remove()
+  $('#middle-earth').children('article')[0].children[1].remove();
 
   // select Rivendell
 
-  var rivendellLocation = $('h1:contains("Rivendell")')
+  var rivendellLocation = $('h1:contains("Rivendell")');
 
 
   var hobbits = [
@@ -200,9 +200,9 @@ function forgeTheFellowship() {
 
     var fellowshipDiv = $('<div id="the-fellowship">');
     var rivendell = $('h1:contains("Rivendell")');
-    $(rivendell).append(fellowshipDiv)
-    var list = $('<ul id = fellowshipList>')
-    $('#the-fellowship').append(list)
+    $(rivendell).after(fellowshipDiv);
+    var list = $('<ul id = fellowship-list>');
+    $('#the-fellowship').append(list);
 
 
     // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
@@ -212,71 +212,74 @@ function forgeTheFellowship() {
     var frodo = $('li:contains("Frodo")');
     var clonedFrodo = $('li:contains("Frodo")').clone();
     frodo.remove();
-    $('#fellowshipList').append(clonedFrodo);
+    $('#fellowship-list').append(clonedFrodo);
     alert("Frodo has moved his ass over to The Fellowship");
 
 
     var samwise = $('li:contains("Samwise")');
     var clonedSamwise = $('li:contains("Samwise")').clone();
     samwise.remove();
-    $('#fellowshipList').append(clonedSamwise);
+    $('#fellowship-list').append(clonedSamwise);
     alert("Samwise has moved his ass over to The Fellowship");
 
 
     var meriadoc = $('li:contains("Meriadoc")');
     var clonedMeriadoc = $('li:contains("Meriadoc")').clone();
     meriadoc.remove();
-    $('#fellowshipList').append(clonedMeriadoc);
+    $('#fellowship-list').append(clonedMeriadoc);
     alert("Meriadoc has moved his ass over to The Fellowship");
 
     
     var peregrin = $('li:contains("Peregrin")');
     var clonedPeregrin = $('li:contains("Peregrin")').clone();
     peregrin.remove();
-    $('#fellowshipList').append(clonedPeregrin);
+    $('#fellowship-list').append(clonedPeregrin);
     alert("Peregrin has moved his ass over to The Fellowship");    
 
 
     var gandalf = $('li:contains("Gandalf")');
     var clonedGandalf = $('li:contains("Gandalf")').clone();
     gandalf.remove();
-    $('#fellowshipList').append(clonedGandalf);
+    $('#fellowship-list').append(clonedGandalf);
     alert("Gandalf has moved his old ass over to The Fellowship"); 
 
 
     var legolas = $('li:contains("Legolas")');
     var clonedLegolas = $('li:contains("Legolas")').clone();
     legolas.remove();
-    $('#fellowshipList').append(clonedLegolas);
+    $('#fellowship-list').append(clonedLegolas);
     alert("Legolas has moved his ass over to The Fellowship");    
 
 
     var gimli = $('li:contains("Gimli")');
     var clonedGimli = $('li:contains("Gimli")').clone();
     gimli.remove();
-    $('#fellowshipList').append(clonedGimli);
+    $('#fellowship-list').append(clonedGimli);
     alert("Gimli has moved his ass over to The Fellowship"); 
 
 
     var aragorn = $('li:contains("Aragorn")');
     var clonedAragorn = $('li:contains("Aragorn")').clone();
     aragorn.remove();
-    $('#fellowshipList').append(clonedAragorn);
+    $('#fellowship-list').append(clonedAragorn);
     alert("Aragorn has moved his ass over to The Fellowship"); 
 
 
     var boromir = $('li:contains("Boromir")');
     var clonedBoromir = $('li:contains("Boromir")').clone();
     boromir.remove();
-    $('#fellowshipList').append(clonedBoromir);
+    $('#fellowship-list').append(clonedBoromir);
     alert("Boromir has moved his ass over to The Fellowship"); 
+
+    var divRing = $('<div>').prop('id', 'the-ring').prop('class', 'magic-imbued-jewelry');
+    $('li:contains("Frodo")').append(divRing);
 
 
     var emptyAside = $('#middle-earth').children('article')[1].children[0].children[0];
     emptyAside.remove();
 
     var emptyUl = $('#middle-earth').children('article')[1].children[0].children[0];
-    emptyUl.remove()
+    emptyUl.remove();
 }
 
 forgeTheFellowship();
@@ -291,49 +294,160 @@ forgeTheFellowship();
 function theBalrog(){
 
 
+  // change the `'Gandalf'` text to `'Gandalf the White'`
 
+  $('li:contains("Gandalf")').text("Galdalf the White");
+  console.log('Galdalf\'s old ass just got wiser');
 
+  // apply the following style to the element, make the // background 'white', add a grey border
 
-
-
-
-
-
-
-
-
+  $('li:contains("Galdalf the White")').prop('id', 'gDawg');
+  $('#gDawg').css('background-color', '#FFFFFF');
+  $('#gDawg').css('border', '5px solid gray');
+  $('#gDawg').css('width', '33%');
 }
 
 theBalrog();
 
 
 
-
-
-
+///   PART 9  ///
 
 
 
 function hornOfGondor() {
-  // your answers here
+
+  // pop up an alert that the horn of gondor has been blown
+
+  alert('The horn of Gondor has been blown!');
+
+  // Boromir's been killed by the Uruk-hai!
+  // Remove `Boromir` from the Fellowship
+
+  var peaceBoromir = $('li:contains("Boromir")');
+  peaceBoromir.remove();
+
 }
 
 hornOfGondor();
 
+
+
+///   PART 10   ///
+
+
+
 function itsDangerousToGoAlone() {
-  // your answers here
+
+
+  // add a div with an id of `'mount-doom'` to `Mordor`
+
+  var mountDoom = $('<div id="mount-doom">');
+  var mordor = $('h1:contains("Mordor")');
+  mordor.after(mountDoom);
+  var mordorList = $('<ul id="mordorGang">');
+  mountDoom.append(mordorList)
+
+
+  // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor` 
+  
+
+  var supFrodo = $('li:contains("Frodo")');
+  var supClonedFrodo = $('li:contains("Frodo")').clone();
+  supFrodo.remove();
+  $('#mordorGang').append(supClonedFrodo);
+
+  var supSam = $('li:contains("Samwise")');
+  var supClonedSam = $('li:contains("Samwise")').clone();
+  supSam.remove();
+  $('#mordorGang').append(supClonedSam);
+
 }
 
 itsDangerousToGoAlone();
 
+
+
+
+///   PART 11   ///
+
+
+
 function weWantsIt() {
-  // your answers here
+
+
+   // Create a div with an id of `'gollum'` and add div gollum to Mordor, 
+
+   var gollumDiv = $('<div id="gollum">');
+   $('h1:contains("Mordor")').after(gollumDiv);
+
+   // Remove `the ring` from `Frodo` and give it to `Gollum`
+
+    var ringFrodo = $('#the-ring');
+    var clonedRingFrodo = $('#the-ring').clone();
+    ringFrodo.remove();
+    $('#gollum').append(clonedRingFrodo);
+
+   // Move Gollum into Mount Doom
+
+    $('#mount-doom').append($('#gollum'));  
+
 }
 
 weWantsIt();
 
+
+
+///   PART 12   ///  WHEWWWWWWWWWWWWWWW ////
+
+
 function thereAndBackAgain(){
-  // your answers here
+
+  // remove `Gollum` and `the Ring` from the document
+
+  $('#gollum').remove();  
+
+  // Move all the `hobbits` back to `the shire`
+
+  var helloAgainShire = $('h1:contains("The Shire")');
+  var shireList = $('<ul id = shire-list>')
+  $(helloAgainShire).after(shireList);
+
+  var frodo = $('li:contains("Frodo")');
+  var clonedFrodo = $('li:contains("Frodo")').clone();
+  frodo.remove();
+  $(shireList).append(clonedFrodo);
+
+
+  var samwise = $('li:contains("Samwise")');
+  var clonedSamwise = $('li:contains("Samwise")').clone();
+  samwise.remove();
+  $(shireList).append(clonedSamwise);
+
+  var meriadoc = $('li:contains("Meriadoc")');
+  var clonedMeriadoc = $('li:contains("Meriadoc")').clone();
+  meriadoc.remove();
+  $(shireList).append(clonedMeriadoc);
+
+  
+  var peregrin = $('li:contains("Peregrin")');
+  var clonedPeregrin = $('li:contains("Peregrin")').clone();
+  peregrin.remove();
+  $(shireList).append(clonedPeregrin);
+  
 }
 
 thereAndBackAgain();
+
+
+
+
+
+
+
+
+
+
+
+
+
